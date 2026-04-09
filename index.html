@@ -3,268 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CartX Careers – Join Australia's fastest-growing e-commerce platform" />
+  <meta name="keywords" content="CartX, jobs, careers, e-commerce, web developer" />
+  <meta name="author" content="CartX Group G05" />
   <title>CartX – Careers</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .hero {
-      background: linear-gradient(135deg, #ff6b35 0%, #f7c59f 50%, #efefd0 100%);
-      padding: 80px 40px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      left: -40px;
-      width: 250px;
-      height: 250px;
-      background: rgba(255, 107, 53, 0.2);
-      border-radius: 50%;
-    }
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: #1a1a2e;
-      letter-spacing: -2px;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-slogan {
-      font-size: 1.3rem;
-      color: #3d3d3d;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-desc {
-      max-width: 680px;
-      margin: 0 auto 30px;
-      font-size: 1rem;
-      color: #4a4a4a;
-      line-height: 1.7;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-image {
-      width: 100%;
-      max-width: 800px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin: 20px auto 0;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 1;
-    }
-    .search-bar-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      margin: 30px auto 0;
-      max-width: 500px;
-      position: relative;
-      z-index: 1;
-    }
-    .search-bar-wrapper input[type="search"] {
-      flex: 1;
-      padding: 14px 20px;
-      font-size: 1rem;
-      border: 2px solid #1a1a2e;
-      border-right: none;
-      border-radius: 50px 0 0 50px;
-      outline: none;
-      font-family: inherit;
-    }
-    .search-bar-wrapper button {
-      padding: 14px 28px;
-      background: #1a1a2e;
-      color: #fff;
-      border: 2px solid #1a1a2e;
-      border-radius: 0 50px 50px 0;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .search-bar-wrapper button:hover {
-      background: #ff6b35;
-      border-color: #ff6b35;
-    }
-  </style>
+  <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ===== HEADER / LOGO ===== -->
-  <header class="site-header">
-    <div class="logo-area">
-      <span class="logo-mark" style="background: #ff6b35; color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 1.6rem; font-weight: 900; letter-spacing: -1px;">CartX</span>
-      <span class="logo-tagline">E-Commerce & Digital Retail Platform</span>
-    </div>
-
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" class="nav-active" aria-current="page">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="apply.html">Apply</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </nav>
+  <header>
+    <img src="cartx_logo.png" alt="CartX company logo" />
+    <h1>CartX</h1>
+    <p class="slogan">E-Commerce &amp; Digital Retail Platform</p>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
+  <nav>
+    <p class="menu"><a href="index.html">Home</a></p>
+    <p class="menu"><a href="jobs.html">Jobs</a></p>
+    <p class="menu"><a href="apply.html">Apply</a></p>
+    <p class="menu"><a href="about.html">About Us</a></p>
+  </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <h1 class="hero-title" id="hero-heading">Build the Future of Retail</h1>
-      <p class="hero-slogan">Join CartX — where technology meets commerce at scale.</p>
-      <p class="hero-desc">
-        CartX is Australia's fastest-growing e-commerce platform, connecting millions of buyers and sellers.
-        We're expanding our technical and user experience teams to deliver next-generation retail experiences.
-        If you're passionate about web, data, and delightful interfaces — your cart starts here.
+  <article>
+
+    <aside>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="jobs.html">View Open Roles</a></li>
+        <li><a href="apply.html">Submit an Application</a></li>
+        <li><a href="about.html">Meet the Team</a></li>
+      </ul>
+    </aside>
+
+    <section id="about-company">
+      <h2>About CartX</h2>
+      <p>
+        CartX is Australia's fastest-growing e-commerce platform, connecting millions of buyers
+        and sellers every day. We are expanding our technical and user experience teams to deliver
+        next-generation retail experiences. If you are passionate about web, data, and great
+        interfaces — your cart starts here.
       </p>
+      <figure>
+        <img src="cartx_hero_image.jpeg" alt="CartX team collaborating in a modern office" />
+        <figcaption>The CartX team at our Melbourne headquarters</figcaption>
+      </figure>
+    </section>
 
-      <!-- Search box with button -->
-      <form class="search-bar-wrapper" role="search" aria-label="Search jobs">
-        <label for="job-search" class="sr-only">Search for jobs</label>
-        <input type="search" id="job-search" name="q" placeholder="Search roles, skills, keywords…" />
-        <button type="submit">Search</button>
+    <section id="search">
+      <h2>Search Jobs</h2>
+      <form role="search" action="#" method="get">
+        <label for="job-search">Search for a role:</label>
+        <input type="search" id="job-search" name="q" placeholder="e.g. Web Developer" />
+        <input type="submit" value="Search" />
       </form>
-
-      <img
-        src="CartX_hero_image.jpeg"
-        alt="CartX team collaborating on e-commerce platform design in a modern office"
-        class="hero-image"
-      />
     </section>
 
-    <!-- ===== WHY CARTX SECTION ===== -->
-    <section class="content-section" aria-labelledby="why-heading">
-      <div class="container">
-        <h2 id="why-heading" class="section-title">Why CartX?</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">🚀</span>
-            <h3>High-Impact Work</h3>
-            <p>Your code ships to millions of Australians every day. At CartX, there's no waiting — you build, you deploy, you see results.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">🌱</span>
-            <h3>Grow Fast</h3>
-            <p>We invest in our people. Mentorship programs, conference budgets, and clear career pathways in tech and UX leadership.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">🤝</span>
-            <h3>Inclusive Culture</h3>
-            <p>Diverse teams build better products. We actively welcome applicants from all backgrounds, including First Nations peoples.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">💡</span>
-            <h3>Innovation First</h3>
-            <p>Hack weeks, open-source contributions, and internal incubators — we give you the space to experiment and break things safely.</p>
-          </article>
-        </div>
-      </div>
+    <section id="why-cartx">
+      <h2>Why Work at CartX?</h2>
+      <p>We offer more than just a job — we offer a place to grow, innovate, and make an impact.</p>
+      <ul>
+        <li><strong>High-Impact Work</strong> – Your code ships to millions of Australians every day.</li>
+        <li><strong>Grow Fast</strong> – Mentorship programs, conference budgets, and clear career pathways.</li>
+        <li><strong>Inclusive Culture</strong> – We welcome applicants from all backgrounds.</li>
+        <li><strong>Innovation First</strong> – Hack weeks, open-source contributions, and internal incubators.</li>
+      </ul>
     </section>
 
-    <!-- ===== STATS TABLE ===== -->
-    <section class="content-section bg-dark" aria-labelledby="stats-heading">
-      <div class="container">
-        <h2 id="stats-heading" class="section-title light">CartX by the Numbers</h2>
-        <div class="table-wrapper">
-          <table class="stats-table" aria-describedby="stats-caption">
-            <caption id="stats-caption">CartX company metrics and open positions overview</caption>
-            <thead>
-              <tr>
-                <th scope="col">Metric</th>
-                <th scope="col">2024</th>
-                <th scope="col">2025</th>
-                <th scope="col">2026 (Target)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Active Users</th>
-                <td>3.2M</td>
-                <td>5.8M</td>
-                <td>10M+</td>
-              </tr>
-              <tr>
-                <th scope="row">Engineering Staff</th>
-                <td>120</td>
-                <td>210</td>
-                <td>350</td>
-              </tr>
-              <tr>
-                <th scope="row">UX & Design</th>
-                <td>28</td>
-                <td>55</td>
-                <td>90</td>
-              </tr>
-              <tr>
-                <th scope="row">Open Roles (Tech + UX)</th>
-                <td colspan="2" class="merged-cell">Currently hiring across both years</td>
-                <td>45 open roles</td>
-              </tr>
-              <tr>
-                <th scope="row" rowspan="2">Key Locations</th>
-                <td>Melbourne</td>
-                <td>Sydney</td>
-                <td>Brisbane</td>
-              </tr>
-              <tr>
-                <td colspan="3" class="merged-cell">Remote-first roles available nationally</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <section id="stats">
+      <h2>CartX by the Numbers</h2>
+      <table>
+        <caption>CartX company metrics and open positions overview</caption>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">2023</th>
+            <th scope="col">2024</th>
+            <th scope="col">2025 (Target)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Active Users</th>
+            <td>3.2M</td>
+            <td>5.8M</td>
+            <td>10M+</td>
+          </tr>
+          <tr>
+            <th scope="row">Engineering Staff</th>
+            <td>120</td>
+            <td>210</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <th scope="row">UX &amp; Design</th>
+            <td>28</td>
+            <td>55</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <th scope="row">Open Roles (Tech + UX)</th>
+            <td colspan="2" class="merged-cell">Currently hiring across both years</td>
+            <td>45 open roles</td>
+          </tr>
+          <tr>
+            <th scope="row" rowspan="2">Key Locations</th>
+            <td>Melbourne</td>
+            <td>Sydney</td>
+            <td>Brisbane</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="merged-cell">Remote-first roles available nationally</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- ===== ACKNOWLEDGEMENT OF COUNTRY ===== -->
-    <section class="acknowledgement" aria-labelledby="ack-heading">
-      <div class="container">
-        <div class="ack-inner">
-          <span class="ack-icon" aria-hidden="true">🪃</span>
-          <div>
-            <h2 id="ack-heading">Acknowledgement of Country</h2>
-            <p>
-              CartX acknowledges the Traditional Custodians of the lands on which we work and live across Australia.
-              We pay our respects to Elders past, present, and emerging. We are committed to reconciliation and to
-              building a workplace that is inclusive, respectful, and reflective of the communities we serve.
-            </p>
-            <p>
-              <strong>CartX strongly encourages applications from Aboriginal and Torres Strait Islander peoples.</strong>
-              We recognise the unique perspectives and contributions that First Nations employees bring to our teams,
-              and we are committed to providing a culturally safe and supportive environment for all.
-            </p>
-          </div>
-        </div>
-      </div>
+    <section id="acknowledgement">
+      <h2>Acknowledgement of Country</h2>
+      <p>
+        CartX acknowledges the Traditional Custodians of the lands on which we work and live
+        across Australia. We pay our respects to Elders past, present, and emerging. We are
+        committed to reconciliation and to building a workplace that is inclusive, respectful,
+        and reflective of the communities we serve.
+      </p>
+      <p>
+        <strong>CartX strongly encourages applications from Aboriginal and Torres Strait Islander peoples.</strong>
+        We recognise the unique perspectives and contributions that First Nations employees bring
+        to our teams, and we are committed to providing a culturally safe and supportive environment for all.
+      </p>
     </section>
 
-  </main>
+  </article>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" aria-label="Site footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark" style="background: #ff6b35; color: #fff; padding: 4px 10px; border-radius: 6px; font-weight: 900;">CartX</span>
-        <p>&copy; 2026 CartX Pty Ltd. All rights reserved.</p>
-      </div>
-      <nav class="footer-links" aria-label="Footer links">
-        <ul>
-          <li><a href="_______________" target="_blank" rel="noopener noreferrer">Jira Board</a></li>
-          <li><a href="https://github.com/104001159/Applied-Web-Project.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-          <li><a href="mailto:info@cartx.com.au">info@cartx.com.au</a></li>
-        </ul>
-      </nav>
-    </div>
+  <footer>
+    <p><a href="https://your-jira-board-link.atlassian.net" target="_blank" rel="noopener noreferrer">Jira Board</a></p>
+    <p><a href="https://github.com/104001159/Applied-Web-Project.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+    <p><a href="mailto:info@cartx.com.au">info@cartx.com.au</a></p>
   </footer>
 
 </body>
