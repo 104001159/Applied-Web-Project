@@ -334,3 +334,43 @@ footer a:hover {
     color: #d4a017;
     text-decoration: underline;
 }
+
+/* JOBS.HTML */
+
+.applyhere {
+    display : flex;
+    background-color:#d4a017;
+    width : 100%;
+    align-items: center;
+    justify-content: center;
+    font : 1.5em;
+}
+.applyhere a:hover {
+    color: #2d1b4e;
+    text-decoration: underline;
+}
+
+.moneygraphic {
+    max-width: 1.5em;
+}
+
+.container {
+    display : flex;
+    border : 2px solid #2d1b4e;
+}
+
+.container div {
+    border-right: 1px solid #2d1b4e;
+    padding : 10px;
+}
+
+.container .end {
+    border : none;
+}
+
+#topofjobs {
+    display : flex;
+    justify-content: center;
+    border: none;
+    font-size : 2em;
+}
