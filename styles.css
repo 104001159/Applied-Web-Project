@@ -365,3 +365,10 @@ footer a:hover {
     border: none;
     font-size: 2em;
 }
+/*ABOUT.HTML*/
+dl {
+    width: 25%;
+}
+.side_by_side {
+    display:flex;
+}
