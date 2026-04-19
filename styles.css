@@ -55,8 +55,6 @@ header {
     text-align: center;
     padding: 1.5em;
     border-bottom: 4px solid #d4a017;
-    background-image: url('images/fade.jpg');
-    background-repeat: repeat;
 }
 
 header img {
