@@ -2,6 +2,7 @@
 <html lang = "en">
     <head>
         <?php include 'header.inc'; ?>
+        <meta name="description" content="About page for Assignment 2">
         <meta name="keywords" content="about">
         <meta name="author" content="Tom Holliday" >
         <title>About Our Team</title>
