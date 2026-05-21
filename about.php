@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Part of Assignment 1 for Web Tech Project">
+        <?php include 'header.inc'; ?>
         <meta name="keywords" content="about">
         <meta name="author" content="Tom Holliday" >
         <title>About Our Team</title>
-        <link rel = "stylesheet" href = "styles.css">
         <style>
             table {
                 width: 25%;
