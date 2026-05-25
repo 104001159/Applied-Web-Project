@@ -33,3 +33,16 @@ CREATE TABLE IF NOT EXISTS eoi (
     other_skills TEXT,
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 );
+
+-- About / Member Contributions table
+CREATE TABLE IF NOT EXISTS about (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    member_name VARCHAR(100) NOT NULL,
+    student_id VARCHAR(20) NOT NULL,
+    contribution_area VARCHAR(100) NOT NULL,
+    contribution_detail TEXT NOT NULL,
+    project_part INT NOT NULL,
+    quote_text TEXT,
+    quote_lang VARCHAR(10),
+    quote_translation TEXT
+);
