@@ -27,10 +27,10 @@
         </header>
 
         <nav>
-            <p class="menu"><a href="index.html">Home</a></p>
-            <p class="menu"><a href="jobs.html">Jobs</a></p>
-            <p class="menu"><a href="apply.html">Apply</a></p>
-            <p class="menu"><a href="about.html">About Us</a></p>
+            <p class="menu"><a href="index.php">Home</a></p>
+            <p class="menu"><a href="jobs.php">Jobs</a></p>
+            <p class="menu"><a href="apply.php">Apply</a></p>
+            <p class="menu"><a href="about.php">About Us</a></p>
         </nav>
         
         <h2 id = "topofjobs">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <aside class = "applyhere">
-                    <a href="apply.html">APPLY HERE</a>
+                    <a href="apply.php">APPLY HERE</a>
                 </aside>
             </fieldset>
         </section>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <aside class = "applyhere">
-                    <a href="apply.html">APPLY HERE</a>
+                    <a href="apply.php">APPLY HERE</a>
                 </aside>
            </fieldset>
         </section>
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 <aside class = "applyhere">
-                    <a href="apply.html">APPLY HERE</a>
+                    <a href="apply.php">APPLY HERE</a>
                 </aside>
            </fieldset>
         </section>
