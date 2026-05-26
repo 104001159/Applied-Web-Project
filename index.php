@@ -8,7 +8,7 @@
   <meta name="author" content="CartX Group G05" />
   <title>CartX – Careers</title>
   <link href="styles.css" rel="stylesheet" />
-  <!-- Embedded CSS (page-specific styles) -->
+
   <style>
     header {
       background-image: linear-gradient(135deg, #2d1b4e 60%, #4a2c7a 100%);
@@ -33,10 +33,10 @@
   </header>
 
   <nav>
-    <p class="menu"><a href="index.html">Home</a></p>
-    <p class="menu"><a href="jobs.html">Jobs</a></p>
-    <p class="menu"><a href="apply.html">Apply</a></p>
-    <p class="menu"><a href="about.html">About Us</a></p>
+    <p class="menu"><a href="index.php">Home</a></p>
+    <p class="menu"><a href="jobs.php">Jobs</a></p>
+    <p class="menu"><a href="apply.php">Apply</a></p>
+    <p class="menu"><a href="about.php">About Us</a></p>
   </nav>
 
   <article>
@@ -44,9 +44,9 @@
     <aside>
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="jobs.html">View Open Roles</a></li>
-        <li><a href="apply.html">Submit an Application</a></li>
-        <li><a href="about.html">Meet the Team</a></li>
+        <li><a href="jobs.php">View Open Roles</a></li>
+        <li><a href="apply.php">Submit an Application</a></li>
+        <li><a href="about.php">Meet the Team</a></li>
       </ul>
     </aside>
 
