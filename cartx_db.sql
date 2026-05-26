@@ -63,4 +63,6 @@ INSERT INTO about (member_name, student_id, contribution_area, contribution_deta
 ('Kavish', '104001159', 'EOI Table', 'Designed and created the Expression of Interest database table', 2),
 ('Kavish', '104001159', 'about.php', 'Updated About page to load member contributions from the database', 2),
 ('Tom', '106501169', 'PHP Includes', 'Extracted shared HTML (header, nav, footer) into reusable .inc files and converted all pages to .php', 2),
-('Tom', '106501169', 'manage.php', 'Built the HR manager portal with login authentication', 2);
+('Tom', '106501169', 'manage.php', 'Built the HR manager portal with login authentication', 2),
+('YuKit', '106409878', 'process_eoi.php', 'Handles EOI form submission with full server-side validation and sanitisation', 2),
+('YuKit', '106409878', 'jobs.php & Jobs Table', 'Created the jobs database table and added a search bar to retrieve jobs from the database', 2);
