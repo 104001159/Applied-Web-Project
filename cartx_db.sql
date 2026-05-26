@@ -56,3 +56,9 @@ INSERT INTO about (member_name, student_id, contribution_area, contribution_deta
 ('YuKit', '106409878', 'Jira', 'Creator of the Jira Board', 1, NULL, NULL, NULL),
 ('Tom', '106501169', 'Jobs.html', 'The Jobs page and its CSS', 1, 'Creér, c''est vivre deux fois', 'fr', 'To create is to live twice. - Albert Camus'),
 ('Tom', '106501169', 'About.html', 'The About page and its CSS', 1, NULL, NULL, NULL);
+
+-- Insert member contributions for Part 2
+INSERT INTO about (member_name, student_id, contribution_area, contribution_detail, project_part) VALUES
+('Kavish', '104001159', 'settings.php', 'Database connection settings and configuration', 2),
+('Kavish', '104001159', 'EOI Table', 'Designed and created the Expression of Interest database table', 2),
+('Kavish', '104001159', 'about.php', 'Updated About page to load member contributions from the database', 2);
