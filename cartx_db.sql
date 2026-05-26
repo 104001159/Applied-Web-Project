@@ -59,6 +59,8 @@ INSERT INTO about (member_name, student_id, contribution_area, contribution_deta
 
 -- Insert member contributions for Part 2
 INSERT INTO about (member_name, student_id, contribution_area, contribution_detail, project_part) VALUES
-('Kavish', '104001159', 'settings.php', 'Database connection settings and configuration', 2),
+('Kavish', '104001159', 'settings.php', 'Set up database connection settings and configuration', 2),
 ('Kavish', '104001159', 'EOI Table', 'Designed and created the Expression of Interest database table', 2),
-('Kavish', '104001159', 'about.php', 'Updated About page to load member contributions from the database', 2);
+('Kavish', '104001159', 'about.php', 'Updated About page to load member contributions from the database', 2),
+('Tom', '106501169', 'PHP Includes', 'Extracted shared HTML (header, nav, footer) into reusable .inc files and converted all pages to .php', 2),
+('Tom', '106501169', 'manage.php', 'Built the HR manager portal with login authentication', 2);
