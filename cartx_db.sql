@@ -46,3 +46,13 @@ CREATE TABLE IF NOT EXISTS about (
     quote_lang VARCHAR(10),
     quote_translation TEXT
 );
+
+-- Insert member contributions for Part 1
+INSERT INTO about (member_name, student_id, contribution_area, contribution_detail, project_part, quote_text, quote_lang, quote_translation) VALUES
+('Kavish', '104001159', 'Index.HTML', 'The Home Page and its CSS', 1, 'எண்ணம் போல் வாழ்வு', '', 'Perception drives Reality'),
+('Kavish', '104001159', 'Navigation Menu', 'Central Navigation Menu used on all pages', 1, NULL, NULL, NULL),
+('Kavish', '104001159', 'Github Repository', 'Creator of the Github Repository', 1, NULL, NULL, NULL),
+('YuKit', '106409878', 'Apply.html', 'The Apply page and its CSS', 1, '星隕似箭劃萬裡 瞬芒終歸入萬空', 'zh-Hant', 'Shooting stars cut across vast distances like arrows, a brief flash and returns to the emptiness'),
+('YuKit', '106409878', 'Jira', 'Creator of the Jira Board', 1, NULL, NULL, NULL),
+('Tom', '106501169', 'Jobs.html', 'The Jobs page and its CSS', 1, 'Creér, c''est vivre deux fois', 'fr', 'To create is to live twice. - Albert Camus'),
+('Tom', '106501169', 'About.html', 'The About page and its CSS', 1, NULL, NULL, NULL);
