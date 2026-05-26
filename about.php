@@ -21,12 +21,12 @@
         </header>
 
         <nav>
-            <p class="menu"><a href="index.html">Home</a></p>
-            <p class="menu"><a href="jobs.html">Jobs</a></p>
-            <p class="menu"><a href="apply.html">Apply</a></p>
-            <p class="menu"><a href="about.html">About Us</a></p>
+            <p class="menu"><a href="index.php">Home</a></p>
+            <p class="menu"><a href="jobs.php">Jobs</a></p>
+            <p class="menu"><a href="apply.php">Apply</a></p>
+            <p class="menu"><a href="about.php">About Us</a></p>
         </nav>
-      
+
         <fieldset>
             <h2>
                 Group 5
@@ -48,19 +48,23 @@
                 </li>
             </ul>
         </fieldset>
-      
+
         <fieldset>
             <h2>
                 Kavish - 104001159
             </h2>
-                <dl>
-                    <dt>Index.HTML</dt>
-                    <dd>The Home Page and its css</dd>
-                    <dt>Navigation Menu</dt>
-                    <dd>Central Navigation Menu used on all pages</dd>
-                    <dt>Github repository</dt>
-                    <dd>Creator of the Github Repository</dd>
-                </dl>
+                <?php
+                    require_once "settings.php";
+                    $result = mysqli_query($conn, "SELECT contribution_area, contribution_detail FROM about WHERE student_id = '104001159' ORDER BY project_part ASC");
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        echo "<dl>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<dt>" . htmlspecialchars($row['contribution_area']) . "</dt>";
+                            echo "<dd>" . htmlspecialchars($row['contribution_detail']) . "</dd>";
+                        }
+                        echo "</dl>";
+                    }
+                ?>
             <p lang =""> <em>எண்ணம் போல் வாழ்வு</em> (Translation: Perception drives Reality)</p>
             <table>
                 <caption>Fun Facts about Kavish</caption>
@@ -100,17 +104,22 @@
                 </tbody>
             </table>
         </fieldset>
-      
+
         <fieldset>
             <h2>
                 YuKit - 106409878
             </h2>
-                <dl style = "color: #7b4fa6">
-                    <dt>Apply.html</dt>
-                    <dd>The Apply page and its css</dd>
-                    <dt>Jira</dt>
-                    <dd>Creator of the Jira Board</dd>
-                </dl>
+                <?php
+                    $result = mysqli_query($conn, "SELECT contribution_area, contribution_detail FROM about WHERE student_id = '106409878' ORDER BY project_part ASC");
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        echo '<dl style="color: #7b4fa6">';
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<dt>" . htmlspecialchars($row['contribution_area']) . "</dt>";
+                            echo "<dd>" . htmlspecialchars($row['contribution_detail']) . "</dd>";
+                        }
+                        echo "</dl>";
+                    }
+                ?>
             <p lang ="zh-Hant"><em>星隕似箭劃萬裡 瞬芒終歸入萬空</em> (Translation: Shooting stars cut across vast distances like arrows
 a brief flash and returns to the emptiness)</p>
             <table>
@@ -151,17 +160,23 @@ a brief flash and returns to the emptiness)</p>
                 </tbody>
             </table>
         </fieldset>
-      
+
         <fieldset>
             <h2>
                 Tom - 106501169
             </h2>
-            <dl>
-                <dt>Jobs.html</dt>
-                <dd>The Jobs page and its css</dd>
-                <dt>About.html</dt>
-                <dd>The about page and its css</dd>
-            </dl>
+                <?php
+                    $result = mysqli_query($conn, "SELECT contribution_area, contribution_detail FROM about WHERE student_id = '106501169' ORDER BY project_part ASC");
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        echo "<dl>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<dt>" . htmlspecialchars($row['contribution_area']) . "</dt>";
+                            echo "<dd>" . htmlspecialchars($row['contribution_detail']) . "</dd>";
+                        }
+                        echo "</dl>";
+                    }
+                    mysqli_close($conn);
+                ?>
             <p lang ="fr"><em>Creér, c'est vivre deux fois</em> (Translation:To create is to live twice.) - Albert Camus</p>
             <table>
                 <caption>Fun Facts about Tom</caption>
@@ -201,7 +216,7 @@ a brief flash and returns to the emptiness)</p>
                 </tbody>
             </table>
         </fieldset>
-    
+
         <?php include 'footer.inc'; ?>
     </body>
 </html>
