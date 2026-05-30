@@ -41,20 +41,7 @@
 
 <?php
 require_once 'settings.php';
-
-// Create jobs table if it doesn't exist
-$create_table_query = "CREATE TABLE IF NOT EXISTS jobs (
-    job_id                  INT AUTO_INCREMENT PRIMARY KEY,
-    job_ref                 VARCHAR(5)   NOT NULL,
-    title                   VARCHAR(100) NOT NULL,
-    description             TEXT         NOT NULL,
-    salary                  VARCHAR(50),
-    reporting_line          TEXT,
-    key_responsibilities    TEXT,
-    essential_requirements  TEXT,
-    preferred_requirements  TEXT
-    )";
-mysqli_query($conn, $create_table_query);
+require_once 'create_jobs_table.php';
 
 // default job values, hardcoded, from project 1
 $row_count_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM jobs");
