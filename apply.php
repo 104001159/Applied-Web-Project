@@ -4,10 +4,9 @@
     <?php include 'header.inc'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Application - CartX">
-    <meta name="author" content="CartX Group G05">
+    <meta name="author" content="YuKit(Karco)">
     <title>Apply – CartX</title>
 
-    
 
     <style>
         .form-row {
@@ -109,7 +108,7 @@
 <body>
 
     <header>
-        <img src="cartx_logo.png" alt="CartX company logo">
+        <img src="images/cartx_logo.png" alt="CartX company logo">
         <h1>CartX</h1>
         <p class="slogan">E-Commerce &amp; Digital Retail Platform</p>
     </header>
@@ -124,9 +123,9 @@
     <article style="max-width: 700px;">
 
         <h2>Job Application Form</h2>
-        <p>Apply for a position at CartX. All fields with * are required </p>
+        <p>Apply for a position at CartX. All fields with * are required.</p>
 
-        <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+        <form action="process_eoi.php" method="post" novalidate>
 
             <!-- Position -->
             <fieldset>
@@ -136,10 +135,8 @@
                     <?php $prefill_ref = isset($_GET['job_ref']) ? htmlspecialchars($_GET['job_ref']) : ''; ?>
                     <input type="text" id="job_ref" name="job_ref"
                            placeholder="e.g. FED10"
-                           maxlength="5"
-                           pattern="[A-Za-z0-9]{5}"
                            value="<?php echo $prefill_ref; ?>"
-                           required>
+                           maxlength="5">
                 </div>
             </fieldset>
 
@@ -153,17 +150,13 @@
                         <label for="first_name">First Name *</label>
                         <input type="text" id="first_name" name="first_name"
                                placeholder="John"
-                               maxlength="20"
-                               pattern="[A-Za-z]{1,20}"
-                               required>
+                               maxlength="20">
                     </div>
                     <div class="form-field">
                         <label for="last_name">Last Name *</label>
                         <input type="text" id="last_name" name="last_name"
                                placeholder="Smith"
-                               maxlength="20"
-                               pattern="[A-Za-z]{1,20}"
-                               required>
+                               maxlength="20">
                     </div>
                 </div>
 
@@ -171,9 +164,7 @@
                 <div class="form-field">
                     <label for="dob">Date of Birth * (dd/mm/yyyy)</label>
                     <input type="text" id="dob" name="dob"
-                           placeholder="dd/mm/yyyy"
-                           pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-                           required>
+                           placeholder="dd/mm/yyyy">
                 </div>
 
                 <!-- row: Email + Phone -->
@@ -181,22 +172,19 @@
                     <div class="form-field">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email"
-                               placeholder="name@example.com"
-                               required>
+                               placeholder="name@example.com">
                     </div>
                     <div class="form-field">
                         <label for="phone">Phone Number *</label>
                         <input type="tel" id="phone" name="phone"
-                               placeholder="0412345678"
-                               pattern="[0-9]{8,12}"
-                               required>
+                               placeholder="0412345678">
                     </div>
                 </div>
 
                 <!-- Gender -->
                 <fieldset>
                     <legend>Gender *</legend>
-                    <input type="radio" id="male" name="gender" value="male" required>
+                    <input type="radio" id="male" name="gender" value="male">
                     <label class="radio-label" for="male">Male</label>
 
                     <input type="radio" id="female" name="gender" value="female">
@@ -219,23 +207,21 @@
                     <label for="street">Street Address *</label>
                     <input type="text" id="street" name="street"
                            placeholder="123 Main Street"
-                           maxlength="40"
-                           required>
+                           maxlength="40">
                 </div>
 
                 <div class="form-field">
                     <label for="suburb">Suburb / Town *</label>
                     <input type="text" id="suburb" name="suburb"
                            placeholder="Melbourne"
-                           maxlength="40"
-                           required>
+                           maxlength="40">
                 </div>
 
                 <!-- row: State + Postcode -->
                 <div class="form-row">
                     <div class="form-field">
                         <label for="state">State *</label>
-                        <select id="state" name="state" required>
+                        <select id="state" name="state">
                             <option value="">-- Select --</option>
                             <option value="VIC">VIC</option>
                             <option value="NSW">NSW</option>
@@ -251,9 +237,7 @@
                         <label for="postcode">Postcode *</label>
                         <input type="text" id="postcode" name="postcode"
                                placeholder="3000"
-                               maxlength="4"
-                               pattern="[0-9]{4}"
-                               required>
+                               maxlength="4">
                     </div>
                 </div>
 
@@ -297,11 +281,7 @@
 
     </article>
 
-    <footer>
-        <p><a href="https://your-jira-board-link.atlassian.net" target="_blank" rel="noopener noreferrer">Jira Board</a></p>
-        <p><a href="https://github.com/104001159/Applied-Web-Project.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
-        <p><a href="mailto:info@cartx.com.au">info@cartx.com.au</a></p>
-    </footer>
+    <?php include 'footer.inc'; ?>
 
 </body>
 </html>
