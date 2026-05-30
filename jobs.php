@@ -201,7 +201,7 @@ function split_list($text) {
             </div>
 
             <aside class="applyhere">
-                <a href="apply.php">APPLY HERE</a>
+                <a href="apply.php?job_ref=<?php echo urlencode($job_row['job_ref']); ?>">APPLY HERE</a>
             </aside>
         </fieldset>
     </section>

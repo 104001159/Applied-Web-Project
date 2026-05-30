@@ -133,10 +133,12 @@
                 <legend>Position</legend>
                 <div class="form-field">
                     <label for="job_ref">Job Reference Number *</label>
+                    <?php $prefill_ref = isset($_GET['job_ref']) ? htmlspecialchars($_GET['job_ref']) : ''; ?>
                     <input type="text" id="job_ref" name="job_ref"
                            placeholder="e.g. FED10"
                            maxlength="5"
                            pattern="[A-Za-z0-9]{5}"
+                           value="<?php echo $prefill_ref; ?>"
                            required>
                 </div>
             </fieldset>
