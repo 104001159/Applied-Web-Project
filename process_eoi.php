@@ -1,5 +1,6 @@
 <?php
-// process_eoi.php
+
+session_start();
 
 // redirect
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST)) {
@@ -54,7 +55,12 @@ $skills_posted = isset($_POST['skills']) ? $_POST['skills'] : [];
 // store all validation, 
 $errors = [];
 
-// 5 alphanumeric characters, not sure if need to match from database
+// 5 alphanumeric characters, 
+// job ref is intentionally omitted 
+// 1. table might not be created if not in order (database is create in jobs.php first visit)
+// 2. job listings may be internal or posted to database, checking might leak those code by bruteforce
+// 3. the user might be generally applying
+// 4. seperation of concern, as this is HR issue
 if ($job_ref === '') {
     $errors['job_ref'] = 'Job reference number is required.';
 } elseif (!preg_match('/^[A-Za-z0-9]{5}$/', $job_ref)) {
@@ -164,15 +170,31 @@ foreach ($skills_posted as $skill) {
 }
 $skills_string = implode(', ', $skills_selected);
 
-// If there are errors, show error page and selection to return
+// If there are errors, store in session for apply.php sticky form,
+// then show error summary page with a link back
 if (!empty($errors)) {
+    $_SESSION['form_errors'] = $errors;
+    $_SESSION['form_data']   = [
+        'job_ref'      => $job_ref,
+        'first_name'   => $first_name,
+        'last_name'    => $last_name,
+        'dob'          => $dob_input,
+        'email'        => $email,
+        'phone'        => $phone,
+        'gender'       => $gender,
+        'street'       => $street,
+        'suburb'       => $suburb,
+        'state'        => $state,
+        'postcode'     => $postcode,
+        'skills'       => $skills_selected,
+        'other_skills' => $other_skills,
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Application Error - CartX</title>
     <?php include 'header.inc'; ?>
+    <title>Application Error - CartX</title>
 </head>
 <body>
     <header>
@@ -189,16 +211,11 @@ if (!empty($errors)) {
     <article>
         <h2>Please fix the following errors:</h2>
         <ul>
-        <?php
-        foreach ($errors as $error_message) {
-            echo "<li>$error_message</li>";
-        }
-        ?>
+        <?php foreach ($errors as $error_message): ?>
+            <li><?php echo htmlspecialchars($error_message); ?></li>
+        <?php endforeach; ?>
         </ul>
-        <!-- Recommened by Qwen, Searched Sticky Form, still finding way to fix this -->
-        <!-- Current idea: Post method back to apply.php and value = item with session -->
-        <!-- then in apply.php when POST read everything back -->
-        <a href="javascript:history.back()">Go back and fix</a>
+        <p><a href="apply.php">Go back and fix errors</a></p>
     </article>
     <?php include 'footer.inc'; ?>
 </body>
