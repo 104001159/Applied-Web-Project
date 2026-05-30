@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <meta charset="utf-8">
+        <?php include 'header.inc'; ?>
         <meta name="description" content="Part of Assignment 1 for Web Tech Project">
         <meta name="keywords" content="HTML, jobs">
         <meta name="author" content="Tom Holliday" >
         <title>CartX Careers</title>
-        <link rel = "stylesheet" href = "styles.css">
         <style>
             .applyhere {
                 display: flex;

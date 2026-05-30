@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <?php include 'header.inc'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Application - CartX">
     <meta name="author" content="CartX Group G05">
     <title>Apply – CartX</title>
 
-    <link href="styles.css" rel="stylesheet">
+    
 
     <style>
         .form-row {

@@ -1,2 +1,2 @@
 <meta charset="utf-8">
-<link href="styles.css" rel="stylesheet">
+<link href="styles/styles.css" rel="stylesheet">

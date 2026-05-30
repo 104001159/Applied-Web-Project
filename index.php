@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <?php include 'header.inc'; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="CartX Careers – Join Australia's fastest-growing e-commerce platform" />
   <meta name="keywords" content="CartX, jobs, careers, e-commerce, web developer" />
   <meta name="author" content="CartX Group G05" />
   <title>CartX – Careers</title>
-  <link href="styles.css" rel="stylesheet" />
 
   <style>
     header {
