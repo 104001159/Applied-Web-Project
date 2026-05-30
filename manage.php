@@ -2,8 +2,11 @@
 session_start();
 require_once("settings.php");
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
-// Check if the user is logged in, if
-// not then redirect them back to the login page
+
+$eoi_result = mysqli_query($conn, "SELECT * FROM eoi");
+$eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
+
+// Check if user is logged in, if not then redirect back to login page
 if (empty($_SESSION['user'])) {
     header("Location: loginpage.php");
     exit();
@@ -17,20 +20,51 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_POST['delete_job_ref'])) {
-    $job_ref = $_POST('job_ref');
-    $del_query = "DELETE FROM eoi WHERE job_ref = ?";
+    $job_ref = $_POST['job_ref'];
+    $del_query = "DELETE FROM eoi WHERE job_ref = $job_ref";
     $del_result = mysqli_query($conn, $del_query);
 }
 
-if (isset($_POST['change_status'])) {
-    $eoi_id = $_POST['EOInumber'];
+if (isset($_POST['change_status'], $_POST['eoi_id'], $_POST['new_status'])) {
+    $eoi_id = $_POST['eoi_id'];
     $new_status = $_POST['new_status'];
-    $status_query = "UPDATE eoi SET status = ? WHERE eoi_id = ?";
+    $status_query = "UPDATE eoi SET status = '$new_status' WHERE EOInumber = $eoi_id";
     $status_result = mysqli_query($conn, $status_query);
 }
 
-$eoi_result = mysqli_query($conn, "SELECT * FROM eoi");
-$eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
+if (isset($_POST['sort_submit'], $_POST['sort_method'], $_POST['filter'])) {
+    $allowed_columns = ['EOInumber', 'job_ref', 'first_name', 'last_name', 'email', 'phone', 'gender', 'street', 'suburb', 'state', 'postcode', 'skills'];
+    
+    $sort_method = $_POST['sort_method'];
+    $filter = mysqli_real_escape_string($conn, $_POST['filter']);
+
+   if (in_array($sort_method, $allowed_columns)) {
+        $eoi_result = mysqli_query($conn, "SELECT * FROM eoi WHERE $sort_method LIKE '%$filter%'");
+        $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC); // overwrites the original $eois
+    }
+}
+
+if (isset($_POST['list_by_name'])) {
+    $filter = $_POST['list_name_choice'];
+
+    if ($filter == 'first_name'):
+        $query = "SELECT * FROM eoi ORDER BY first_name ASC";
+    elseif ($filter == 'last_name'):
+        $query = "SELECT * FROM eoi ORDER BY last_name ASC";
+    else:
+        $query = "SELECT * FROM eoi ORDER BY last_name ASC, first_name ASC";
+    endif;
+    $eoi_result = mysqli_query($conn, $query);
+    $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
+
+if (isset($_POST['list_by_job_reference'])) {
+    $query = "SELECT * FROM eoi ORDER BY CAST(job_ref AS UNISIGNED) ASC";
+    $eoi_result = mysqli_query($conn, $query);
+    $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
+}
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang = "en">
@@ -47,9 +81,68 @@ $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
         </style>
     </head>
     <body>
+        <header>
+           <h1>Manager Dashboard</h1> 
+        </header>
         <?php include "nav.inc"; ?>
-        <h1>Manager Dashboard</h1>
         <br>
+
+        <h2>List Options</h2>
+
+        <h3>List All </h3>
+        <form method="POST">
+            List All:
+            <input type ="submit" name="list_all" value="List All">
+        </form>
+
+        <h3>List by Name</h3>
+        <form method="POST">
+            List by: 
+            <select name = "list_name_choice">
+                <option value= "first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="last_name ASC, first_name">Both</option>
+            </select>
+            <input type="submit" name="list_by_name" value="List by Name">
+        </form>
+
+        <h3>List by Job Reference</h3>
+        <form method="POST">
+            List by:
+            <input type="submit" name="list_by_job_ref" value="List by Job Reference">
+        </form>
+
+        <br>
+        <h2>Sort EOI's</h2>
+        <form method = "POST">
+            Sort Method:
+            <select name = "sort_method">
+                <option value="EOInumber">EOI ID</option>
+                <option value="job_ref">Job Reference</option>
+                <option value="first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="gender">Gender</option>
+                <option value="street">Street</option>
+                <option value="suburb">Suburb</option>
+                <option value="state">State</option>
+                <option value="postcode">Postcode</option>
+                <option value="skills">Skills</option>
+            </select>
+            by
+            <input type="text" name="filter">
+            <input type="submit" name="sort_submit" value="Sort">
+        </form>
+        <br>
+
+        <h2>Delete All EOI's by Job Reference</h2>
+        <form method="POST">
+            Job Reference: <input type = "text" name = "job_ref" pattern = "[0-9]{5}" required>
+            <input type="submit" name = "delete_job_ref" value="Delete">
+        </form>
+        <br>
+
         <?php if (!empty($eois)): ?>
             <h2>EOI List</h2>
             <table border="1">
@@ -90,13 +183,13 @@ $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
                     <td><?= htmlspecialchars($row['status']); ?></td>
                     <td>
                         <form method="POST">
-                            <input type="hidden" name="eoi_id" value="<?php $row['EOInumber'] ?>">
+                            <input type="hidden" name="eoi_id" value="<?=  $row['EOInumber'] ?>">
                             <select name="new_status">
                                 <option value="New">New</option>
                                 <option value="Current">Current</option>
                                 <option value="Final">Final</option>
                             </select>
-                            <input type="submit" name="change_status" value="update">
+                            <input type="submit" name="change_status" value="Update">
                         </form>
                     </td>
                 </tr>
@@ -104,6 +197,7 @@ $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
             </table>
         <?php else: ?>
             <p>No EOI's found<p>
+            <?php print_r($eois); ?>
         <?php endif; ?>
     </body>
     <footer>
