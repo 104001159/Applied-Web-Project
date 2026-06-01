@@ -16,7 +16,6 @@ description: index.html styles for CartX project, designed to be clean, modern, 
 
 body {
     background-color: #faf8ff;
-    background-image: url('../images/cartx_logo.png');
     background-repeat: repeat;
     background-size: 200px;
     background-attachment: fixed;
@@ -55,7 +54,9 @@ p {
 /* HEADER */
 
 header {
-    background-color: #2d1b4e;
+    background-image: url('../images/purple_banner.jpg');
+    background-size: cover;
+    background-position: center;
     text-align: center;
     padding: 1.5em;
     border-bottom: 4px solid #d4a017;
