@@ -4,6 +4,11 @@
     <?php include 'header.inc'; ?>
     <title>Login Form</title>
     <style>
+        header {
+            background-image: url('images/purple_banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         h1 {
             color: #2d1b4e;
         }
