@@ -191,6 +191,7 @@ function err_class($field, $errors) {
                 <legend>Position</legend>
                 <div class="form-field">
                     <label for="job_ref">Job Reference Number *</label>
+                    <!-- maxlength is physically preventing more character, QOL, not validation -->
                     <input type="text" id="job_ref" name="job_ref"
                            placeholder="e.g. FED10"
                            maxlength="5"

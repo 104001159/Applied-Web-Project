@@ -10,24 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST)) {
 
 require_once 'settings.php';
 
-// Create EOI table if it doesn't exist
-$create_table_query = "CREATE TABLE IF NOT EXISTS eoi (
-    EOInumber    INT AUTO_INCREMENT PRIMARY KEY,
-    job_ref      VARCHAR(5)   NOT NULL,
-    first_name   VARCHAR(20)  NOT NULL,
-    last_name    VARCHAR(20)  NOT NULL,
-    dob          DATE         NOT NULL,
-    email        VARCHAR(255) NOT NULL,
-    phone        VARCHAR(12)  NOT NULL,
-    gender       VARCHAR(20)  NOT NULL,
-    street       VARCHAR(40)  NOT NULL,
-    suburb       VARCHAR(40)  NOT NULL,
-    state        VARCHAR(3)   NOT NULL,
-    postcode     VARCHAR(4)   NOT NULL,
-    skills       VARCHAR(255),
-    other_skills TEXT,
-    status       ENUM('New','Current','Final') DEFAULT 'New'
-)";
+// call create eoi
+require_once 'create_eoi_table.php'
+
 mysqli_query($conn, $create_table_query);
 
 // Sanitise function
@@ -56,11 +41,11 @@ $skills_posted = isset($_POST['skills']) ? $_POST['skills'] : [];
 $errors = [];
 
 // 5 alphanumeric characters, 
-// job ref is intentionally omitted 
+// job ref is intentionally omitted for reasons
 // 1. table might not be created if not in order (database is create in jobs.php first visit)
 // 2. job listings may be internal or posted to database, checking might leak those code by bruteforce
 // 3. the user might be generally applying
-// 4. seperation of concern, as this is HR issue
+// 4. spec 
 if ($job_ref === '') {
     $errors['job_ref'] = 'Job reference number is required.';
 } elseif (!preg_match('/^[A-Za-z0-9]{5}$/', $job_ref)) {
