@@ -3,7 +3,6 @@
 <head>
     <?php include 'header.inc'; ?>
     <title>Login Form</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         h1 {
             color: #2d1b4e;
@@ -48,8 +47,6 @@
         </form>
     </div>
 </body>
-<footer>
-    <?php include "footer.inc"; ?>
-</footer>
+<?php include "footer.inc"; ?>
 
 </html>
