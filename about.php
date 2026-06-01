@@ -7,6 +7,11 @@
         <meta name="author" content="Tom Holliday" >
         <title>About Our Team</title>
         <style>
+            header {
+                background-image: url('images/purple_banner.jpg');
+                background-size: cover;
+                background-position: center;
+            }
             table {
                 width: 25%;
             }
