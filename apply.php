@@ -49,6 +49,11 @@ function err_class($field, $errors) {
     <title>Apply – CartX</title>
 
     <style>
+        header {
+            background-image: url('images/purple_banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .form-row {
             display: flex;
             gap: 15px;
