@@ -36,6 +36,7 @@
     <p class="menu"><a href="jobs.php">Jobs</a></p>
     <p class="menu"><a href="apply.php">Apply</a></p>
     <p class="menu"><a href="about.php">About Us</a></p>
+    <p class="menu" style="float: right;"><a href="loginpage.php">Manager Login</a></p>
   </nav>
 
   <article>
@@ -149,11 +150,7 @@
 
   </article>
 
-  <footer>
-    <p><a href="https://10026thur1630g05.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiZTgxYmZlYmEyZDE4NDMzMmIxNGI4NWNlODRjMjE5MDYiLCJwIjoiaiJ9" target="_blank" rel="noopener noreferrer">Jira Board</a></p>
-    <p><a href="https://github.com/104001159/Applied-Web-Project.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
-    <p><a href="mailto:info@cartx.com.au">info@cartx.com.au</a></p>
-  </footer>
+  <?php include 'footer.inc'; ?>
 
 </body>
 </html>
