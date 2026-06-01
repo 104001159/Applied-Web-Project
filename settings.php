@@ -1,8 +1,10 @@
 <?php
-$host = "localhost";
-$user = "root";
+$host     = "localhost";
+$user     = "root";
 $password = "";
+$pwd      = "";          
 $database = "cartx_db";
+$sql_db   = "cartx_db"; 
 
 $conn = @mysqli_connect($host, $user, $password, $database);
 
