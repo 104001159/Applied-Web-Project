@@ -2,8 +2,8 @@
 <html lang = "en">
     <head>
         <?php include 'header.inc'; ?>
-        <meta name="description" content="About page for Assignment 2">
-        <meta name="keywords" content="about">
+        <meta name="description" content="Meet the CartX Group 5 development team. Learn about each member's contributions to the project across Part 1 and Part 2.">
+        <meta name="keywords" content="about us, team, contributions">
         <meta name="author" content="Tom Holliday" >
         <title>About Our Team</title>
         <style>
