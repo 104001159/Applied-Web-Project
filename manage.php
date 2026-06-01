@@ -72,6 +72,11 @@ if (isset($_POST['list_by_job_ref'])) {
     <head>
         <?php include "header.inc"; ?>
         <style>
+            header {
+                background-image: url('images/purple_banner.jpg');
+                background-size: cover;
+                background-position: center;
+            }
             #login {
                 font-size: large;
                 color: #d4a017;
@@ -83,9 +88,17 @@ if (isset($_POST['list_by_job_ref'])) {
     </head>
     <body>
         <header>
-           <h1>Manager Dashboard</h1> 
+            <img src="images/cartx_logo.png" alt="CartX company logo">
+            <h1>CartX</h1>
+            <p class="slogan">Manager Dashboard</p>
         </header>
-        <?php include "nav.inc"; ?>
+        <nav>
+            <p class="menu"><a href="index.php">Home</a></p>
+            <p class="menu"><a href="jobs.php">Jobs</a></p>
+            <p class="menu"><a href="apply.php">Apply</a></p>
+            <p class="menu"><a href="about.php">About Us</a></p>
+            <p class="menu" style="float: right;"><a href="manage.php?logout=true">Logout</a></p>
+        </nav>
         <br>
 
         <h2>List Options</h2>
@@ -202,7 +215,6 @@ if (isset($_POST['list_by_job_ref'])) {
         <?php endif; ?>
     </body>
     <footer>
-        <a href="manage.php?logout=true" id="login">Logout</a>
         <?php include "footer.inc"; ?>
     </footer>
 
