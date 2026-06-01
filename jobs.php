@@ -3,7 +3,7 @@
 <head>
     <?php include 'header.inc'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Available jobs at CartX">
+    <meta name="description" content="Browse open roles at CartX including developer, management, and operations positions. View full job details, salary, responsibilities, and apply directly.">
     <meta name="keywords" content="HTML, jobs">
     <meta name="author" content="Karco, Tom Holiday">
     <title>CartX Careers</title>
