@@ -10,14 +10,16 @@
 
     #$password = hash('sha1', $password);
     
-    // Simple query to check credentials
-    $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
-    $result = mysqli_query($conn, $query);
+    // Prepared statement to prevent SQL injection
+    $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ? AND password = ?");
+    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $user = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($stmt);
 
     if ($user) {
         $_SESSION['user'] = $user;
-        var_dump($_SESSION);
         header("Location: manage.php");
         exit();
     } 
