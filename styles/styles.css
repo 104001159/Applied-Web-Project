@@ -16,6 +16,10 @@ description: index.html styles for CartX project, designed to be clean, modern, 
 
 body {
     background-color: #faf8ff;
+    background-image: url('../images/cartx_logo.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
@@ -369,4 +373,61 @@ dl {
 }
 .side_by_side {
     display:flex;
+}
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    article {
+        min-width: unset;
+        padding: 0 0.8em;
+    }
+
+    aside {
+        float: none;
+        width: 100%;
+        margin: 0 0 1em 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    footer p {
+        display: block;
+        width: 100%;
+        text-align: center !important;
+        margin: 0.3em 0;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .menu {
+        display: block;
+        margin: 0.2em 0;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    #search input[type="search"] {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    #search input[type="submit"] {
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 0.4em;
+    }
 }
