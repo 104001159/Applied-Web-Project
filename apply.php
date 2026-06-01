@@ -44,7 +44,7 @@ function err_class($field, $errors) {
 <head>
     <?php include 'header.inc'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Application - CartX">
+    <meta name="description" content="Apply for a position at CartX. Complete our online expression of interest form with your personal details, address, and relevant skills.">
     <meta name="author" content="YuKit(Karco)">
     <title>Apply – CartX</title>
 
