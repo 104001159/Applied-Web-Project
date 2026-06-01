@@ -8,6 +8,11 @@
     <meta name="author" content="Karco, Tom Holiday">
     <title>CartX Careers</title>
     <style>
+        header {
+            background-image: url('images/purple_banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .applyhere {
             display: flex;
             background-color: #d4a017;
