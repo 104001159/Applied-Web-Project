@@ -50,6 +50,10 @@ require_once 'settings.php';
 require_once 'create_jobs_table.php';
 
 // default job values, hardcoded, from project 1
+// I understand job listing could be empty, but currently im unsure if first
+// run of the code will fail due to unintended reason, so the job seeding is kept
+// this is open for easy modification anyway, in practice just delete line 59-103 
+
 $row_count_result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM jobs");
 $row_count_row    = mysqli_fetch_assoc($row_count_result);
 
