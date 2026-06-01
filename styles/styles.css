@@ -16,9 +16,6 @@ description: index.html styles for CartX project, designed to be clean, modern, 
 
 body {
     background-color: #faf8ff;
-    background-repeat: repeat;
-    background-size: 200px;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
