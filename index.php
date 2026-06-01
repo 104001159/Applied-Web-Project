@@ -10,7 +10,9 @@
 
   <style>
     header {
-      background-image: linear-gradient(135deg, #2d1b4e 60%, #4a2c7a 100%);
+      background-image: url('images/purple_banner.jpg');
+      background-size: cover;
+      background-position: center;
     }
     #about-company figure {
       max-width: 100%;
