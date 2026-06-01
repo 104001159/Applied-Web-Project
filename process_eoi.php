@@ -11,9 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST)) {
 require_once 'settings.php';
 
 // call create eoi
-require_once 'create_eoi_table.php'
-
-mysqli_query($conn, $create_table_query);
+require_once 'create_eoi_table.php';
 
 // Sanitise function
 function clean($value) {
