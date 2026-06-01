@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("settings.php");
-$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+$conn = mysqli_connect($host, $user, $password, $database);
 
 $eoi_result = mysqli_query($conn, "SELECT * FROM eoi");
 $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
@@ -21,8 +21,10 @@ if (isset($_GET['logout'])) {
 
 if (isset($_POST['delete_job_ref'])) {
     $job_ref = $_POST['job_ref'];
-    $del_query = "DELETE FROM eoi WHERE job_ref = $job_ref";
-    $del_result = mysqli_query($conn, $del_query);
+    $stmt = mysqli_prepare($conn, "DELETE FROM eoi WHERE job_ref = ?");
+    mysqli_stmt_bind_param($stmt, "s", $job_ref);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 }
 
 if (isset($_POST['change_status'], $_POST['eoi_id'], $_POST['new_status'])) {
@@ -56,13 +58,12 @@ if (isset($_POST['list_by_name'])) {
     endif;
     $eoi_result = mysqli_query($conn, $query);
     $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
-
-if (isset($_POST['list_by_job_reference'])) {
-    $query = "SELECT * FROM eoi ORDER BY CAST(job_ref AS UNISIGNED) ASC";
-    $eoi_result = mysqli_query($conn, $query);
-    $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
 }
 
+if (isset($_POST['list_by_job_ref'])) {
+    $query = "SELECT * FROM eoi ORDER BY job_ref ASC";
+    $eoi_result = mysqli_query($conn, $query);
+    $eois = mysqli_fetch_all($eoi_result, MYSQLI_ASSOC);
 }
 
 ?>
@@ -138,7 +139,7 @@ if (isset($_POST['list_by_job_reference'])) {
 
         <h2>Delete All EOI's by Job Reference</h2>
         <form method="POST">
-            Job Reference: <input type = "text" name = "job_ref" pattern = "[0-9]{5}" required>
+            Job Reference: <input type = "text" name = "job_ref" pattern = "[A-Za-z0-9]{5}" required>
             <input type="submit" name = "delete_job_ref" value="Delete">
         </form>
         <br>
